@@ -17,8 +17,8 @@ const nav = [
 function LogoMark({ size = "md" }: { size?: "md" | "lg" }) {
   const h = size === "lg" ? "h-20 md:h-24" : "h-14 sm:h-16 md:h-20";
   return (
-    <span className="inline-flex items-center rounded-2xl bg-white px-4 py-2.5 shadow-card ring-1 ring-white/20">
-      <img src={logo} alt="Медия Груп — дигитални рекламни екрани" className={`${h} w-auto`} />
+    <span className="inline-flex items-center">
+      <img src={logo} alt="Медия Груп — дигитални рекламни екрани" className={`${h} w-auto drop-shadow-[0_4px_20px_rgba(99,160,255,0.35)]`} />
     </span>
   );
 }

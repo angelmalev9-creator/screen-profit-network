@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/layout";
-import { PageHero, Section } from "@/components/ui-blocks";
+import { PageHero, Section, FaqBlock } from "@/components/ui-blocks";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 
@@ -94,6 +94,14 @@ function Page() {
           </form>
         </div>
       </Section>
+      <FaqBlock
+        items={[
+          { q: "За колко време получавам отговор?", a: "Отговаряме на всички запитвания в рамките на същия работен ден. За спешни случаи можете да ни потърсите директно на телефона." },
+          { q: "Работите ли извън София?", a: "Да. Основната ни база е в София, но обслужваме обекти и в други градове, особено при вериги и партньорски локации." },
+          { q: "Мога ли да поискам оглед на място?", a: "Да — за по-големи обекти или партньорски локации препоръчваме безплатен оглед, за да дадем точна препоръка и оферта." },
+          { q: "Какво да подготвя преди разговора?", a: "Полезно е да знаем типа на обекта, приблизителния трафик, дали имате собствен телевизор и какъв резултат искате да постигнете." },
+        ]}
+      />
       <style>{`
         .form-input {
           width: 100%;

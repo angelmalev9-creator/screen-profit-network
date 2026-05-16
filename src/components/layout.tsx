@@ -15,10 +15,10 @@ const nav = [
 ] as const;
 
 function LogoMark({ size = "md" }: { size?: "md" | "lg" }) {
-  const h = size === "lg" ? "h-14 md:h-16" : "h-12 md:h-14";
+  const h = size === "lg" ? "h-20 md:h-24" : "h-14 sm:h-16 md:h-20";
   return (
-    <span className="inline-flex items-center rounded-xl bg-white px-3 py-2 shadow-card ring-1 ring-white/20">
-      <img src={logo} alt="Медия Груп" className={`${h} w-auto`} />
+    <span className="inline-flex items-center rounded-2xl bg-white px-4 py-2.5 shadow-card ring-1 ring-white/20">
+      <img src={logo} alt="Медия Груп — дигитални рекламни екрани" className={`${h} w-auto`} />
     </span>
   );
 }

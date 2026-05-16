@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/layout";
-import { PageHero, Section, FinalCTA } from "@/components/ui-blocks";
+import { PageHero, Section, FinalCTA, SeoArticle } from "@/components/ui-blocks";
 import { Train, ShoppingBag, Store, Coffee, Clock, Dumbbell, Building2, Scissors, GraduationCap } from "lucide-react";
 import screenStore from "@/assets/screen-store.jpg";
 import screenGym from "@/assets/screen-gym.jpg";
@@ -62,10 +62,10 @@ function Page() {
 
         <div className="mt-10 grid md:grid-cols-3 gap-4 md:gap-5">
           {["/media/screens-1.mp4", "/media/screens-2.mp4", "/media/screens-3.mp4"].map((src) => (
-            <div key={src} className="overflow-hidden rounded-2xl border border-electric/30 bg-black aspect-[9/16] md:aspect-video shadow-glow">
+            <div key={src} className="overflow-hidden rounded-2xl border border-electric/30 bg-black shadow-glow flex items-center justify-center">
               <video
                 src={src}
-                className="h-full w-full object-cover"
+                className="h-auto w-full max-h-[80vh] object-contain"
                 autoPlay muted loop playsInline preload="metadata"
               />
             </div>
@@ -102,6 +102,19 @@ function Page() {
           </div>
         </div>
       </Section>
+      <SeoArticle
+        eyebrow="Локациите в мрежата"
+        title="Защо локациите с висок трафик са най-силният рекламен канал днес"
+        blocks={[
+          { h: "Магазини и търговски обекти", p: "Дигиталният екран в магазина работи в момента, в който клиентът държи продукта в ръка или избира между конкуренти. Това е точката на покупка — мястото с най-висока конверсия за реклама." },
+          { h: "Заведения и кафенета", p: "Хората престояват средно над 30 минути в заведение. Това превръща екрана в идеален канал за брандиране, представяне на нови продукти и партньорски кампании." },
+          { h: "Фитнеси и спортни клубове", p: "Лоялна, активна аудитория с високи доходи, която посещава обекта няколко пъти седмично. Подходящо за здравословни марки, спортно хранене, услуги и финансови продукти." },
+          { h: "Чакални и медицински центрове", p: "Зони с фокусирано внимание и нула конкуренция за погледа. Реклама в чакалня често постига по-висока запомняемост от много онлайн формати." },
+          { h: "Офис сгради", p: "Бизнес аудитория всеки работен ден, в едно и също време. Идеално за B2B услуги, корпоративни оферти и брандове, ориентирани към професионалисти." },
+          { h: "Метростанции и улици с трафик", p: "Десетки хиляди преминаващи дневно превръщат тези точки в основа за всяка градска рекламна мрежа — масов обхват, висока честота, силна видимост." },
+        ]}
+      />
+
       <FinalCTA
         title="Искате Вашата локация в мрежата?"
         primary={{ to: "/kontakti", label: "Предложете локация" }}

@@ -96,3 +96,52 @@ export function FinalCTA({ title, subtitle, primary, secondary }: {
     </Section>
   );
 }
+
+/** SEO-rich long-form content section. */
+export function SeoArticle({ eyebrow, title, blocks }: {
+  eyebrow?: string;
+  title: string;
+  blocks: Array<{ h: string; p: string }>;
+}) {
+  return (
+    <section className="border-t border-border/60 bg-surface/30">
+      <div className="mx-auto max-w-5xl px-6 py-20 md:py-24">
+        {eyebrow && <p className="text-xs font-bold uppercase tracking-[0.25em] text-electric mb-3">{eyebrow}</p>}
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 md:mb-12 max-w-3xl">{title}</h2>
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+          {blocks.map((b) => (
+            <article key={b.h}>
+              <h3 className="text-lg md:text-xl font-semibold mb-3">{b.h}</h3>
+              <p className="text-muted-foreground leading-relaxed">{b.p}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** SEO FAQ block — also good for AEO. */
+export function FaqBlock({ title = "Често задавани въпроси", items }: {
+  title?: string;
+  items: Array<{ q: string; a: string }>;
+}) {
+  return (
+    <section className="border-t border-border/60">
+      <div className="mx-auto max-w-4xl px-6 py-20 md:py-24">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">{title}</h2>
+        <div className="space-y-4">
+          {items.map((it) => (
+            <details key={it.q} className="group rounded-2xl border border-border/60 bg-card/50 p-6 open:border-electric/40 open:bg-card/80 transition">
+              <summary className="cursor-pointer list-none flex items-start justify-between gap-4 font-semibold text-base md:text-lg">
+                <span>{it.q}</span>
+                <span className="text-electric text-2xl leading-none group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed">{it.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

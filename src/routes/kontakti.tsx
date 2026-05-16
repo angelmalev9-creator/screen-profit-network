@@ -48,7 +48,7 @@ function Page() {
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-electric/10 text-electric ring-1 ring-electric/30"><MapPin className="h-5 w-5" /></div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">Адрес</div>
-                <div className="text-lg font-semibold mt-1">София, ул. „Билянини извори" №1-3</div>
+                <div className="text-lg font-semibold mt-1">София, ул. Билянини извори" №1-3</div>
               </div>
             </div>
           </div>

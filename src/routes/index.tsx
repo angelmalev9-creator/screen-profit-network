@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/layout";
 import { Section, SectionHeader, FeatureCard, CTA, FinalCTA } from "@/components/ui-blocks";
 import heroImg from "@/assets/hero.jpg";
+import screenStore from "@/assets/screen-store.jpg";
 import {
   Monitor, Tv, MapPin, Wrench, Wallet, Radio, Clock, Wifi,
   TrendingUp, Video, Store, Coffee, Dumbbell, Scissors,
@@ -161,7 +162,7 @@ function Index() {
             </div>
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-electric/30 shadow-glow">
-                <img src={heroImg} alt="Мрежа от дигитални екрани" className="h-full w-full object-cover" loading="lazy" width={1600} height={1200} />
+                <img src={screenStore} alt="Дигитален рекламен екран в магазин" className="h-full w-full object-cover" loading="lazy" width={1600} height={1200} />
               </div>
             </div>
           </div>

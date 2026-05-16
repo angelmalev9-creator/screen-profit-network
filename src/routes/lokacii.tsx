@@ -2,6 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/layout";
 import { PageHero, Section, FinalCTA } from "@/components/ui-blocks";
 import { Train, ShoppingBag, Store, Coffee, Clock, Dumbbell, Building2, Scissors, GraduationCap } from "lucide-react";
+import screenStore from "@/assets/screen-store.jpg";
+import screenGym from "@/assets/screen-gym.jpg";
+import screenInstall from "@/assets/screen-install.jpg";
 
 export const Route = createFileRoute("/lokacii")({
   head: () => ({
@@ -36,6 +39,40 @@ function Page() {
         title={<>Мрежа от екрани в <span className="text-gradient">ключови градски точки</span></>}
         subtitle="Работим за изграждане на мрежа от екрани в ключови градски точки. Целта ни е всяка реклама да бъде показвана там, където има реално движение на хора."
       />
+      {/* Реални кадри от мрежата */}
+      <Section className="!py-16 md:!py-20">
+        <div className="max-w-3xl mb-10">
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-electric mb-3">Реални обекти</p>
+          <h2 className="text-3xl md:text-4xl font-bold">Екрани, които вече работят в мрежата</h2>
+        </div>
+        <div className="grid md:grid-cols-3 gap-4 md:gap-5">
+          {[
+            { src: screenStore, t: "Магазин — вход" },
+            { src: screenGym, t: "Спортен клуб" },
+            { src: screenInstall, t: "Монтаж на обект" },
+          ].map((m) => (
+            <figure key={m.t} className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card/50 aspect-[4/3]">
+              <img src={m.src} alt={m.t} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent p-4 text-sm font-semibold">
+                {m.t}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="mt-10 grid md:grid-cols-3 gap-4 md:gap-5">
+          {["/media/screens-1.mp4", "/media/screens-2.mp4", "/media/screens-3.mp4"].map((src) => (
+            <div key={src} className="overflow-hidden rounded-2xl border border-electric/30 bg-black aspect-[9/16] md:aspect-video shadow-glow">
+              <video
+                src={src}
+                className="h-full w-full object-cover"
+                autoPlay muted loop playsInline preload="metadata"
+              />
+            </div>
+          ))}
+        </div>
+      </Section>
+
       <Section>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {locations.map(({ i: Icon, t, d }) => (

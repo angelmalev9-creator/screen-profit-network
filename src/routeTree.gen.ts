@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ZaSobstveniciRouteImport } from './routes/za-sobstvenici'
+import { Route as ZaReklamodateliRouteImport } from './routes/za-reklamodateli'
+import { Route as ZaNasRouteImport } from './routes/za-nas'
+import { Route as UslugiRouteImport } from './routes/uslugi'
+import { Route as PaketiRouteImport } from './routes/paketi'
+import { Route as LokaciiRouteImport } from './routes/lokacii'
+import { Route as KontaktiRouteImport } from './routes/kontakti'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ZaSobstveniciRoute = ZaSobstveniciRouteImport.update({
+  id: '/za-sobstvenici',
+  path: '/za-sobstvenici',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZaReklamodateliRoute = ZaReklamodateliRouteImport.update({
+  id: '/za-reklamodateli',
+  path: '/za-reklamodateli',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZaNasRoute = ZaNasRouteImport.update({
+  id: '/za-nas',
+  path: '/za-nas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UslugiRoute = UslugiRouteImport.update({
+  id: '/uslugi',
+  path: '/uslugi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaketiRoute = PaketiRouteImport.update({
+  id: '/paketi',
+  path: '/paketi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LokaciiRoute = LokaciiRouteImport.update({
+  id: '/lokacii',
+  path: '/lokacii',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktiRoute = KontaktiRouteImport.update({
+  id: '/kontakti',
+  path: '/kontakti',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/kontakti': typeof KontaktiRoute
+  '/lokacii': typeof LokaciiRoute
+  '/paketi': typeof PaketiRoute
+  '/uslugi': typeof UslugiRoute
+  '/za-nas': typeof ZaNasRoute
+  '/za-reklamodateli': typeof ZaReklamodateliRoute
+  '/za-sobstvenici': typeof ZaSobstveniciRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/kontakti': typeof KontaktiRoute
+  '/lokacii': typeof LokaciiRoute
+  '/paketi': typeof PaketiRoute
+  '/uslugi': typeof UslugiRoute
+  '/za-nas': typeof ZaNasRoute
+  '/za-reklamodateli': typeof ZaReklamodateliRoute
+  '/za-sobstvenici': typeof ZaSobstveniciRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/kontakti': typeof KontaktiRoute
+  '/lokacii': typeof LokaciiRoute
+  '/paketi': typeof PaketiRoute
+  '/uslugi': typeof UslugiRoute
+  '/za-nas': typeof ZaNasRoute
+  '/za-reklamodateli': typeof ZaReklamodateliRoute
+  '/za-sobstvenici': typeof ZaSobstveniciRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/kontakti'
+    | '/lokacii'
+    | '/paketi'
+    | '/uslugi'
+    | '/za-nas'
+    | '/za-reklamodateli'
+    | '/za-sobstvenici'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/kontakti'
+    | '/lokacii'
+    | '/paketi'
+    | '/uslugi'
+    | '/za-nas'
+    | '/za-reklamodateli'
+    | '/za-sobstvenici'
+  id:
+    | '__root__'
+    | '/'
+    | '/kontakti'
+    | '/lokacii'
+    | '/paketi'
+    | '/uslugi'
+    | '/za-nas'
+    | '/za-reklamodateli'
+    | '/za-sobstvenici'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KontaktiRoute: typeof KontaktiRoute
+  LokaciiRoute: typeof LokaciiRoute
+  PaketiRoute: typeof PaketiRoute
+  UslugiRoute: typeof UslugiRoute
+  ZaNasRoute: typeof ZaNasRoute
+  ZaReklamodateliRoute: typeof ZaReklamodateliRoute
+  ZaSobstveniciRoute: typeof ZaSobstveniciRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/za-sobstvenici': {
+      id: '/za-sobstvenici'
+      path: '/za-sobstvenici'
+      fullPath: '/za-sobstvenici'
+      preLoaderRoute: typeof ZaSobstveniciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/za-reklamodateli': {
+      id: '/za-reklamodateli'
+      path: '/za-reklamodateli'
+      fullPath: '/za-reklamodateli'
+      preLoaderRoute: typeof ZaReklamodateliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/za-nas': {
+      id: '/za-nas'
+      path: '/za-nas'
+      fullPath: '/za-nas'
+      preLoaderRoute: typeof ZaNasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uslugi': {
+      id: '/uslugi'
+      path: '/uslugi'
+      fullPath: '/uslugi'
+      preLoaderRoute: typeof UslugiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paketi': {
+      id: '/paketi'
+      path: '/paketi'
+      fullPath: '/paketi'
+      preLoaderRoute: typeof PaketiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lokacii': {
+      id: '/lokacii'
+      path: '/lokacii'
+      fullPath: '/lokacii'
+      preLoaderRoute: typeof LokaciiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakti': {
+      id: '/kontakti'
+      path: '/kontakti'
+      fullPath: '/kontakti'
+      preLoaderRoute: typeof KontaktiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +197,24 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KontaktiRoute: KontaktiRoute,
+  LokaciiRoute: LokaciiRoute,
+  PaketiRoute: PaketiRoute,
+  UslugiRoute: UslugiRoute,
+  ZaNasRoute: ZaNasRoute,
+  ZaReklamodateliRoute: ZaReklamodateliRoute,
+  ZaSobstveniciRoute: ZaSobstveniciRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

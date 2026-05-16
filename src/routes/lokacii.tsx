@@ -62,10 +62,10 @@ function Page() {
 
         <div className="mt-10 grid md:grid-cols-3 gap-4 md:gap-5">
           {["/media/screens-1.mp4", "/media/screens-2.mp4", "/media/screens-3.mp4"].map((src) => (
-            <div key={src} className="overflow-hidden rounded-2xl border border-electric/30 bg-black aspect-[9/16] md:aspect-video shadow-glow">
+            <div key={src} className="overflow-hidden rounded-2xl border border-electric/30 bg-black shadow-glow flex items-center justify-center">
               <video
                 src={src}
-                className="h-full w-full object-cover"
+                className="h-auto w-full max-h-[80vh] object-contain"
                 autoPlay muted loop playsInline preload="metadata"
               />
             </div>

@@ -18,7 +18,7 @@ function LogoMark({ size = "md" }: { size?: "md" | "lg" }) {
   const h = size === "lg" ? "h-20 md:h-24" : "h-14 sm:h-16 md:h-20";
   return (
     <span className="inline-flex items-center">
-      <img src={logo} alt="Медия Груп — дигитални рекламни екрани" className={`${h} w-auto drop-shadow-[0_4px_20px_rgba(99,160,255,0.35)]`} />
+      <img src={logo} alt="Медия Груп — дигитални рекламни екрани" className={`${h} w-auto drop-shadow-[0_4px_20px_rgba(239,68,68,0.45)]`} />
     </span>
   );
 }
